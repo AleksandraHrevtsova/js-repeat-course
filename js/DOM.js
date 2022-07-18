@@ -47,7 +47,7 @@ console.log('classList:', body.classList);
 // .replace(oldClass, newClass)
 // .toggle(className)
 
-console.log('dataset:', body.dataset);
+console.log('dataset:', body.dataset);// data-attr_name
 
 console.log('style:', body.style);
 body.style.backgroundColor = 'yellow';

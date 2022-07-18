@@ -17,4 +17,9 @@
 // import './js/closures.js';
 // import './js/Constructors.js';
 // import './js/Classes.js';
-import './js/DOM.js'
+// import './js/DOM.js';
+// import './js/createElements.js';
+// import './js/cloneElements.js';
+// import './js/fetch.js';
+import './js/asyncAwait.js'
+

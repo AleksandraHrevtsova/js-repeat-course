@@ -20,6 +20,6 @@
 // import './js/DOM.js';
 // import './js/createElements.js';
 // import './js/cloneElements.js';
-// import './js/fetch.js';
-import './js/asyncAwait.js'
+import './js/fetch.js';
+// import './js/asyncAwait.js'
 

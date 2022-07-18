@@ -36,17 +36,27 @@ const response = fetch(coctailsPath).then((result)=>{
 }).catch(err=>console.log(err));
 // console.log('response:', response);
 
-function createCoctail(coctail){
+function createCoctail(coctail, ingredients){
   return `<li id=${coctail.idDrink} class='coctailItem'>
             <h3>${coctail.strDrink}</h3>
             <div>
               <img src=${coctail.strDrinkThumb} alt=${coctail.strDrink} width='200'/>
             </div>
+            <div>
+              <h4>Ingredients</h4>
+              <ul>${ingredients}</ul>
+            </div>
           </li>`
 };
 
 function createCoctailsMarkup(array, callback){
-  return array.map((item)=>callback((item))).join('')
+  return array.map((item)=>{
+    const keys = Object.keys(item).filter(key=>key.includes('strIngredient') && item[key]);
+    const ingredients = keys.map(key => item[key]);
+    console.log(ingredients);
+    const ingredientsMarkup = ingredients.map(ing=>`<li>${ing}</li>`).join('')
+    return callback(item, ingredientsMarkup)
+  }).join('')
 }
 
 function createCoctailsListMarkup(elements){

@@ -53,7 +53,6 @@ function createCoctailsMarkup(array, callback){
   return array.map((item)=>{
     const keys = Object.keys(item).filter(key=>key.includes('strIngredient') && item[key]);
     const ingredients = keys.map(key => item[key]);
-    console.log(ingredients);
     const ingredientsMarkup = ingredients.map(ing=>`<li>${ing}</li>`).join('')
     return callback(item, ingredientsMarkup)
   }).join('')
